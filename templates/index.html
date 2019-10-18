@@ -2,9 +2,14 @@
 {% block content %}
     <div class="page">
         <h1>Tweet Whisperer</h1>
+        <small>Enter a topic person or just about anything and find out what the users of twitter think of about it</small>
         <form action="/topic" method="POST">
-            <input type="text" name="query">
-            <button>Enter</button>
+            <div class="form-row">
+                <input type="text" name="query" placeholder="Enter Topic">
+            </div>
+            <div class="form-row">
+                <button>Enter</button>
+            </div>
         </form>
         {% if sentiment_data %}
             <h2>{{sentiment_data['total_attitude']}}</h2>
