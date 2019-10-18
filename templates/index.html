@@ -1,11 +1,13 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Tweet Whisperer</h1>
-    <form action="/topic" method="POST">
-        <input type="text" name="query">
-        <button>Enter</button>
-    </form>
-    {% for tweet in tweets %}
-        <p>{{tweet}}</p>
-    {% endfor %}
+    <div class="page">
+        <h1>Tweet Whisperer</h1>
+        <form action="/topic" method="POST">
+            <input type="text" name="query">
+            <button>Enter</button>
+        </form>
+        {% if sentiment_data %}
+            <h2>{{sentiment_data['total_attitude']}}</h2>
+        {% endif %}
+    </div>
 {% endblock %}
